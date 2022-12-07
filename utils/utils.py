@@ -111,13 +111,13 @@ class LayerNorm(nn.Module):
         return (x - mean) / (std + self.eps) * self.g + self.b
 
 
-def FeedForward(dim, mult = 4, dropout = 0.):
+def FeedForward(dim, repe = 4, dropout = 0.):
     return nn.Sequential(
         LayerNorm(dim),
-        nn.Conv1d(dim, dim * mult, 1),
+        nn.Conv1d(dim, dim * repe, 1),
         nn.GELU(),
         nn.Dropout(dropout),
-        nn.Conv1d(dim * mult, dim, 1)
+        nn.Conv1d(dim * repe, dim, 1)
     )
 
 # MHRAs (multi-head relation aggregators)
