@@ -9,7 +9,7 @@ def parse_args():
     parser.add_argument('--modality', default='RGB', help='the type of the input, RGB,AUDIO, or MIX')
     parser.add_argument('--rgb-list', default='data/ucf_tencrop_1d/ucf-i3d.list', help='list of rgb features ')
     parser.add_argument('--test-rgb-list', default='data/ucf_tencrop_1d/ucf-i3d-test.list', help='list of test rgb features ')
-    parser.add_argument('--gt', default='data/ucf_tencrop_1d/gt-ucf-renew.npy', help='file of ground truth ')
+    parser.add_argument('--gt', default='data/ucf_tencrop_1d/gt-ucf.npy', help='file of ground truth ')
 
     parser.add_argument('--mag_ratio', type=float, default=0.1, help='mag ratio')
 
