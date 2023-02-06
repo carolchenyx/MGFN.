@@ -47,5 +47,5 @@ if __name__ == '__main__':
                               batch_size=1, shuffle=False,
                               num_workers=0, pin_memory=False)
     model = model.to(device)
-    model_dict = model.load_state_dict({k.replace('module.', ''): v for k, v in torch.load('uniformer568-i3d.pkl').items()})
+    model_dict = model.load_state_dict({k.replace('module.', ''): v for k, v in torch.load('mgfn_ucf.pkl').items()})
     auc = test(test_loader, model, args, device)
