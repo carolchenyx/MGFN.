@@ -22,15 +22,9 @@ def save_config(save_path):
     for key in vars(args).keys():
         f.write('{}: {}'.format(key,vars(args)[key]))
         f.write('\n')
-if args.datasetname == "UCF-bg-fg-sepa":
-    savepath = './ckpt/{}_{}_{}_{}_{}_{}_{}'.format(args.datasetname,args.feat_extractor,args.lr,args.batch_size,
-                                                    args.lossratio,args.bothratio,args.comment)
-elif args.add_mag_info == True:
-    savepath = './ckpt/{}_{}_{}_{}_{}_{}'.format(args.datasetname, args.feat_extractor, args.lr, args.batch_size,args.mag_ratio,
+savepath = './ckpt/{}_{}_{}_{}_{}_{}'.format(args.datasetname, args.feat_extractor, args.lr, args.batch_size,args.mag_ratio,
                                               args.comment)
-else:
-    savepath = './ckpt/{}_{}_{}_{}_{}'.format(args.datasetname,args.feat_extractor,args.lr,args.batch_size,
-                                                    args.comment)
+
 save_config(savepath)
 log_writer = SummaryWriter(savepath)
 try:
