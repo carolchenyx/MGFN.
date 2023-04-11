@@ -85,7 +85,7 @@ if __name__ == '__main__':
         log_writer.add_scalar('loss_contrastive', cost, step)
 
         if step % 1 == 0 and step > 0:
-            auc, pr_auc = test(test_loader, model, args, device, savepath)
+            auc, pr_auc = test(test_loader, model, args, device)
             log_writer.add_scalar('auc-roc', auc, step)
             log_writer.add_scalar('pr_auc', pr_auc, step)
 

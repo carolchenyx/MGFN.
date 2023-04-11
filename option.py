@@ -45,6 +45,7 @@ def parse_args():
     parser.add_argument('--pretrained_ckpt', default= None, help='ckpt for pretrained model')
     parser.add_argument('--num-classes', type=int, default=2, help='number of class')
     parser.add_argument('--datasetname', default='UCF', help='dataset to train on (default:UCF/XD/UCF-bg-fg-sepa )')
+    parser.add_argument('--preprocessed', action = 'store_true', help='if train set is already segmented')
     parser.add_argument('--plot-freq', type=int, default=10, help='frequency of plotting (default: 10)')
     parser.add_argument('--max-epoch', type=int, default=1000, help='maximum iteration to train (default: 100)')
 
