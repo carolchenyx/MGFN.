@@ -7,7 +7,7 @@ import option
 args=option.parse_args()
 
 class Dataset(data.Dataset):
-    def __init__(self, args, is_normal=True, transform=None, test_mode=False):
+    def __init__(self, args, is_normal=True, transform=None, test_mode=False, is_preprocessed=False):
         self.modality = args.modality
         self.is_normal = is_normal
         if test_mode:
@@ -66,6 +66,8 @@ class Dataset(data.Dataset):
             return features, name
         else:
             if args.datasetname == 'UCF':
+                if self.is_preprocessed:
+                    return features,label
                 features = features.transpose(1, 0, 2)  # [10, T, F]
                 divided_features = []
 
