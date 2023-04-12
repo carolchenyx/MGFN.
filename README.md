@@ -8,3 +8,15 @@
 #### Train: Modify the option.py and run main.py
 #### 32 segmented UCF dataset: [UCF-crime_ten-crop_I3D_32_seg](https://drive.google.com/drive/folders/1TfqCWvG3N2fqmiPIRuEkl_s2mNmbkRwN?usp=sharing). Rename the data path in ucf-i3d.list and ucf-i3d-test.list based on your data path.
 #### Train: Use preprocessed flag if using the 32 seg data
+
+
+## Citation
+### If you find this repo useful for your research, please consider citing our paper:
+      @misc{chen2022mgfn,
+      title={MGFN: Magnitude-Contrastive Glance-and-Focus Network for Weakly-Supervised Video Anomaly Detection}, 
+      author={Yingxian Chen and Zhengzhe Liu and Baoheng Zhang and Wilton Fok and Xiaojuan Qi and Yik-Chung Wu},
+      year={2022},
+      eprint={2211.15098},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+      }
