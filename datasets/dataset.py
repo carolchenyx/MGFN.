@@ -19,6 +19,7 @@ class Dataset(data.Dataset):
         self._parse_list()
         self.num_frame = 0
         self.labels = None
+        self.is_preprocessed = args.preprocessed
 
     def _parse_list(self):
         self.list = list(open(self.rgb_list_file))
@@ -67,7 +68,7 @@ class Dataset(data.Dataset):
         else:
             if args.datasetname == 'UCF':
                 if self.is_preprocessed:
-                    return features,label
+                    return features, label
                 features = features.transpose(1, 0, 2)  # [10, T, F]
                 divided_features = []
 
